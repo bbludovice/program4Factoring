@@ -1,0 +1,79 @@
+=====
+DATA:
+=====
+int first, second             /* the values returned from get_value */
+int value                     /* values user inputs in get_value */
+int i                         /* used in print_factors function */
+int count, num                /* number to get prime factorization of initialize count to 1 */
+                              /* num is the value sent from main */
+int n1, n2, LCM, max, step    /* values for least common multiple, actual LCM */
+                              /* max value recorded, step to increment values */
+==========
+ALGORITHM:
+==========
+get_value
+ do
+   print instructions: "Please type in a positive integer."
+   scanf
+   print: "You typed in %i"
+  while (value < 0)
+ print: "%i is a good value."
+ return value;
+
+
+print_factors
+ print: "The factors of %i are:  "
+ for (i = 1; i <= value; i++)
+  if (value % i == 0)
+   print: " %i "
+ 
+
+print_primeFactorization  /* Dr. Redfield's function */
+ count = 1                /* count is initialized to 1 */
+ while (count < num)      /* while count is less than num, perform the loop */
+  count++                 /* increment count by 1 */
+  if (num % count == 0)   /* if num modulo count equals to 0, print out the number */
+   print: " %i "
+   num = num / count      /* the new num is num divided by count */
+   count--                /* decrement count by 1 */
+
+
+print_LCM
+ n1 = first
+ n2 = second
+ LCM = 0
+
+ if (n1 > n2)
+  max = step = n1
+ else
+  max = step = n2
+ while
+  if (max % n1 == 0 && max % n2 == 0)
+   LCM = max
+
+  max += step
+ 
+ print: "The Least Common Multiple is %i"
+
+
+print_GCD
+
+
+main
+ print instructions:
+  "This program asks the user for two positive integers and outputs the factors of each,
+   the prime factorization of each, the least common multiple of the two integers, and
+   the greatest common factor of the two integers."
+
+ first = get_value
+ second = get_value
+
+ print: "The two values you entered are: %i and %i."
+
+ print_factors (first);
+ print_factors (second);
+ 
+ print_primefactors (first);
+ print_primefactors (second);
+
+ print_LCM (first, second);
