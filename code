@@ -45,7 +45,7 @@ int get_value (void) /* returns positive values the user inputs back to main */
 
 int print_factors (int first, int second)   /* prints the factors of the two integers */
 {
- int value, i;
+ int value, i;	  /* value user inputs, increments i */
  
  value = first;   /* equating value to "first" sent from main */
  i = 1;			  /* initializing i to equal 1 to begin for loop */
@@ -75,6 +75,43 @@ int print_factors (int first, int second)   /* prints the factors of the two int
 
 
 
+int print_primeFactorization (int first, int second)
+{
+ int count, num;
+ 
+ count = 1;
+ num = first;
+ 
+ printf ("\n\nThe prime factorization for %i is: ", first);
+ while (count < num)
+ {
+  count++;
+  if (num % count == 0)
+  {
+   printf (" %i ", count);
+   num = num / count;
+   count--;
+  }
+ }
+ 
+ count = 1;
+ num = second;
+ 
+ printf ("\nThe prime factorization for %i is: ", second);
+ while (count < num)
+ {
+  count++;
+  if (num % count == 0)
+  {
+   printf (" %i ", count);
+   num = num / count;
+   count--;
+  }
+ }
+}
+
+
+
 void main (void)
 {
  int first, second;   /* the values returned from get_value */
@@ -91,6 +128,7 @@ void main (void)
   printf ("The two values you entered are: %i and %i.\n\n\n", first, second);
   
   print_factors (first, second);
+  print_primeFactorization (first, second);
   
 
 }
