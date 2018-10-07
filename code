@@ -75,37 +75,37 @@ int print_factors (int first, int second)   /* prints the factors of the two int
 
 
 
-int print_primeFactorization (int first, int second)
+int print_primeFactorization (int first, int second) /* prints the prime factorization, from Dr. Redfield */
 {
- int count, num;
+ int count, num;  		  /* incrementing count, value user input */
  
- count = 1;
- num = first;
+ count = 1; 	 		  /* initialize i to equal 1 to begin loop */
+ num = first;			  /* equating num to "first" sent from main */
  
  printf ("\n\nThe prime factorization for %i is: ", first);
- while (count < num)
+ while (count < num)	  /* check 2+; dividend left over */
  {
   count++;
-  if (num % count == 0)
+  if (num % count == 0)   /* count divides into num */
   {
    printf (" %i ", count);
-   num = num / count;
-   count--;
+   num = num / count; 	 /* decrease num */
+   count--;				 /* decrements count to try prime factor again */
   }
  }
  
- count = 1;
- num = second;
+ count = 1; 	 		  /* initialize i to equal 1 to begin loop */
+ num = second;			  /* equating num to "second" sent from main */
  
  printf ("\nThe prime factorization for %i is: ", second);
- while (count < num)
+ while (count < num)	  /* check 2+; dividend left over */
  {
   count++;
-  if (num % count == 0)
+  if (num % count == 0)   /* count divides into num */
   {
    printf (" %i ", count);
-   num = num / count;
-   count--;
+   num = num / count; 	 /* decrease num */
+   count--;				 /* decrements count to try prime factor again */
   }
  }
 }
