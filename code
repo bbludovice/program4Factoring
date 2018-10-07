@@ -112,6 +112,43 @@ int print_primeFactorization (int first, int second) /* prints the prime factori
 
 
 
+int print_LCM (int first, int second)
+{
+ int multiple;
+ 
+ if (first > second)
+ {
+  multiple = first;
+ }
+  else
+  {
+   multiple = second;	
+  }
+  
+  while (multiple % first != 0 || multiple % second != 0)
+  {
+   multiple++;	
+  }
+  
+  printf ("\n\nThe LCM of %i and %i is: %i\n", first, second, multiple);
+}
+
+
+
+int print_GCF (int first, int second)
+{
+ int num = first;
+ 
+ 
+ while (first % num != 0 || second % num != 0)
+ 	{
+ 	 num = num - 1;	
+ 	}
+ printf ("\nThe GCF of %i and %i is: %i\n", first, second, num);
+}
+
+
+
 void main (void)
 {
  int first, second;   /* the values returned from get_value */
@@ -129,6 +166,7 @@ void main (void)
   
   print_factors (first, second);
   print_primeFactorization (first, second);
-  
+  print_LCM (first, second);
+  print_GCF (first, second);
 
 }
