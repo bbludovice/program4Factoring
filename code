@@ -27,23 +27,57 @@
 #include <stdio.h>
 
 
-int get_value (void)
+int get_value (void) /* returns positive values the user inputs back to main */
 {
- int value;   /* positive integer user inputs */
+ int value;  		 /* positive integer user inputs */
  
  do {
  	 printf ("Please type in a positive integer:  ");
  	 scanf ("%i", &value);
  	 printf ("You typed in %i.\n", value);
     } while (value < 0);
+    
  printf ("%i is a good value.\n\n", value);
  return value;	
 }
 
 
+
+int print_factors (int first, int second)   /* prints the factors of the two integers */
+{
+ int value, i;
+ 
+ value = first;   /* equating value to "first" sent from main */
+ i = 1;			  /* initializing i to equal 1 to begin for loop */
+ 
+ printf ("The factors of %i are: ", first);
+ for (i == 1; i <= value; i++)
+ 	{
+	 if (value % i == 0)
+		{
+	 	 printf (" %i ", i);	
+		}
+	}
+	
+ value = second;   /* equating value to "second" sent from main */
+ i = 1;			   /* initializing i to equal 1 to begin for loop */
+ 
+ printf ("\nThe factors of %i are: ", second);
+ for (i == 1; i <= value; i++)
+ 	{
+	 if (value % i == 0)
+		{
+	 	 printf (" %i ", i);	
+		}
+	}
+ return value;
+}
+
+
+
 void main (void)
 {
- int first, second;
+ int first, second;   /* the values returned from get_value */
  
  
  printf ("This program asks the user for two positive integers and outputs:"
@@ -54,6 +88,9 @@ void main (void)
   first = get_value();
   second = get_value();
   
-  printf ("The two values you entered are: %i and %i.", first, second);
+  printf ("The two values you entered are: %i and %i.\n\n\n", first, second);
+  
+  print_factors (first, second);
+  
 
 }
