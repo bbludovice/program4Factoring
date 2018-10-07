@@ -5,7 +5,7 @@
 |: |                                                             | :| 
 | :|                 C program by Breanne Ludovice               |: | 
 |: |                                                             | :|
-| :|                     CS1310 October 1, 2018                  |: |
+| :|                     CS1310 October 7, 2018                  |: |
 |: |                                                             | :| 
 | :|                Assignment: Program 4, Factoring             |: | 
 |: |                                                             | :|
@@ -29,20 +29,31 @@
 
 int get_value (void)
 {
-	 int value;
+ int value;   /* positive integer user inputs */
  
  do {
  	 printf ("Please type in a positive integer:  ");
  	 scanf ("%i", &value);
  	 printf ("You typed in %i.\n", value);
     } while (value < 0);
- printf ("%i is a good value.\n", value);
+ printf ("%i is a good value.\n\n", value);
  return value;	
 }
 
 
 void main (void)
 {
-
+ int first, second;
+ 
+ 
+ printf ("This program asks the user for two positive integers and outputs:"
+ 		 " the factors of each, the prime factorization of each, the least"
+		 " common multiple of the two integers, and the greatest common"
+		 " factor of the two integers.\n\n");
+  
+  first = get_value();
+  second = get_value();
+  
+  printf ("The two values you entered are: %i and %i.", first, second);
 
 }
